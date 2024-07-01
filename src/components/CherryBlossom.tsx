@@ -38,7 +38,12 @@ export function CherryBlossom(props: TSX.IntrinsicElements["group"]) {
     const rotY = ref.current?.rotation.y + delta;
     const rotZ = ref.current?.rotation.z + delta;
 
-    ref.current?.position.setY(y);
+    if (y < -20) {
+      ref.current?.position.setY(30);
+    } else {
+      ref.current?.position.setY(y);
+    }
+
     ref.current?.rotation.set(rotX, rotY, rotZ);
   });
 
@@ -46,7 +51,6 @@ export function CherryBlossom(props: TSX.IntrinsicElements["group"]) {
     "/cherry_blossoms/scene.gltf"
   ) as GLTFResult;
 
-  console.log("ref", ref);
   return (
     <group ref={ref} {...props} dispose={null}>
       <mesh

@@ -5,8 +5,8 @@ import "./globals.css";
 const courier = Courier_Prime({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: "makigom.art",
-  description: "Portfolio",
+  title: "Makigom",
+  description: "Macarena Gómez - Portfolio",
 };
 
 export default function RootLayout({
